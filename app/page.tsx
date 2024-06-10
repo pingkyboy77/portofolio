@@ -1,21 +1,26 @@
-import { BlogPosts } from 'app/components/posts'
+// import { BlogPosts } from 'app/components/posts'
 
 export default function Page() {
-  return (
-    <section>
-      <h1 className="mb-8 text-2xl font-semibold tracking-tighter">
-        My Portfolio
-      </h1>
-      <p className="mb-4">
-        {`I'm a Vim enthusiast and tab advocate, finding unmatched efficiency in
-        Vim's keystroke commands and tabs' flexibility for personal viewing
-        preferences. This extends to my support for static typing, where its
-        early error detection ensures cleaner code, and my preference for dark
-        mode, which eases long coding sessions by reducing eye strain.`}
-      </p>
-      <div className="my-8">
-        <BlogPosts />
+return (
+<section className="mx-10 flex justify-center items-center" style={{ height: '73vh' }}>
+  <div className="flex flex-col lg:flex-row w-full">
+    
+    <div className="lg:w-1/2 flex justify-center items-center animate-fadeInLeft">
+      <div className="text-left">
+        <h1 className="text-xl text-dark-heading dark:text-light-heading md:text-3xl xl:text-3xl xl:leading-tight font-bold" style={{ fontFamily: 'Jakarta Sans, sans-serif' }}>
+          Hi, My Name Is<br />
+          <span className="text-4xl md:text-4xl xl:text-4xl xl:leading-tight font-bold" style={{ background: 'linear-gradient(45deg,#0000FF, #ADD8E6, #800080)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', fontFamily: 'Jakarta Sans, sans-serif' }}>
+            Krisna Yuda Nugraha</span> <br />
+          <span className="text-4xl" style={{ fontFamily: 'Jakarta Sans, sans-serif' }}>I am FULL-STACK DEVELOPER</span>
+        </h1>
       </div>
-    </section>
-  )
+    </div>
+    
+    <div className="lg:w-1/2 flex justify-center items-center animate-fadeInRight">
+      <img src="/krisna.jpg" alt="krisna" className="rounded-full w-64 h-64 lg:w-50 lg:h-auto" />
+    </div>
+
+  </div>
+</section>
+)
 }
