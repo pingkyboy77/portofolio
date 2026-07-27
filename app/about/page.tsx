@@ -1,240 +1,287 @@
+import React from 'react'
+
 export const metadata = {
-title: 'About',
-description: 'Read my blog.',
+  title: 'About | Krisna Yuda Nugraha',
+  description: 'Work experience, background, and career journey of Krisna Yuda Nugraha.',
 }
-import React from 'react';
+
+const experiences = [
+  {
+    role: 'Full-Stack Developer',
+    company: 'Lembaga Sertifikasi Profesi Pasar Modal (LSPPM)',
+    logo: '/lsppm.png',
+    location: 'Jakarta, Indonesia',
+    period: 'Jul 2025 – Present',
+    type: 'Full-Time',
+    summary: 'Developing and maintaining web-based company profile and digital assessment platforms using Laravel and PostgreSQL.',
+    highlights: [
+      'Engineered responsive business workflows for digital capital market certification exams.',
+      'Managed PostgreSQL database architecture and integrated automated reporting features using Jaspersoft Studio (JRXML).',
+      'Leveraged GitHub for version control and cross-functional team collaboration.',
+    ],
+    stack: ['Laravel', 'PostgreSQL', 'JRXML', 'GitHub'],
+  },
+  {
+    role: 'Full-Stack Developer',
+    company: 'PT Malindo Feedmill Tbk',
+    logo: '/malindo.png',
+    location: 'Jakarta, Indonesia',
+    period: 'Sep 2024 – Apr 2025',
+    type: 'Full-Time',
+    summary: 'Built enterprise web applications supporting breeder sales, procurement, and broiler sales operations.',
+    highlights: [
+      'Integrated PostgreSQL and Informix databases for large-scale industrial transactions.',
+      'Designed intuitive admin dashboards using Laravel Filament to streamline internal team workflows.',
+      'Performed routine system maintenance, debugging, and query optimization to ensure high system stability.',
+    ],
+    stack: ['Laravel', 'Filament', 'PostgreSQL', 'Informix', 'GitLab'],
+  },
+  {
+    role: 'Full-Stack Developer (Technical Specialist)',
+    company: 'Kementerian Perhubungan – PT Kalanara Group Indonesia',
+    logo: '/kemenhub.png',
+    location: 'Jakarta, Indonesia',
+    period: 'Sep 2023 – Sep 2024',
+    type: 'Contract',
+    summary: 'Developed public platforms and internal information systems for the Ministry of Transportation of Indonesia.',
+    highlights: [
+      'Built and maintained public web applications utilizing Laravel and ReactJS.',
+      'Collaborated closely with system analysts, UI/UX designers, and Ministry stakeholders to tailor custom features.',
+      'Optimized PostgreSQL and MySQL database structures to comfortably handle high user traffic.',
+    ],
+    stack: ['Laravel', 'ReactJS', 'PostgreSQL', 'MySQL', 'GitLab'],
+  },
+  {
+    role: 'Full-Stack Developer (Part-Time Specialist)',
+    company: 'PT Angkasa Pura II – PT Kamiko Cipta Solusi',
+    logo: '/angkasapura.png',
+    location: 'Jakarta, Indonesia',
+    period: 'Jan 2023 – Aug 2023',
+    type: 'Part-Time',
+    summary: 'Developed the AP2-CMMS web-based airport facility management system.',
+    highlights: [
+      'Constructed full-stack modules for asset and facility management at Soekarno-Hatta International Airport.',
+      'Consolidated multiple isolated modules into a single unified platform dashboard.',
+    ],
+    stack: ['Laravel', 'PostgreSQL', 'JavaScript', 'Trello'],
+  },
+  {
+    role: 'Barista',
+    company: 'Yumaju Coffee',
+    logo: '/yumaju.png',
+    location: 'Bandung, Indonesia',
+    period: 'Oct 2020 – Mar 2023',
+    type: 'Part-Time',
+    summary: 'Professional experience in hospitality that sharpened soft skills, active communication, and teamwork.',
+    highlights: [
+      'Crafted specialty coffee beverages to high standards while operating POS cash register systems.',
+      'Refined customer relation skills, high-pressure team coordination, and strong attention to detail.',
+    ],
+    stack: ['Customer Relations', 'POS Systems', 'Team Dynamics'],
+  },
+]
+
+const certifications = [
+  { title: 'Software Development', issuer: 'BNSP (LSP BSI)', date: 'March 2023' },
+  { title: 'Database Programming with SQL', issuer: 'Oracle Academy', date: 'December 2021' },
+  { title: 'HTML, CSS, JavaScript Basic', issuer: 'Udemy', date: 'March 2024' },
+  { title: 'Introduction to Packet Tracer', issuer: 'Cisco Academy', date: 'May 2022' },
+]
 
 export default function Page() {
-return (
-<section className="mx-20 my-10 grid justify-start items-center">
-    <h1 className="font-bold text-4xl mb-5 text-whitesmoke-800 dark:text-whitesmoke">
-        About Me
-    </h1>
-    <p className=" w-full text-justify text-gray-500 dark:text-gray-300 leading-relaxed mb-10">
-        Mahasiswa Teknik Informatika tingkat akhir yang memiliki passion tinggi di bidang informasi dan teknologi.
-        Memahami konsep sistem dan dasar-dasar jaringan komputer, komputasi berbasis jaringan, dan perancangan
-        atau pembuatan website. Handal dalam mengolah, menganalisis, mengklasifikasikan, membuat perbandingan,
-        dan menyajikannya dalam tabel, visualisasi, dan grafik, mengolah data menjadi informasi yang efisien dan
-        efektif, metode pengambilan data, pemodelan data abstraksi, desain basis data, metode administrasi, dan
-        penyimpanan file. Dalam perjalanan menempuh pendidikan sarjana menyempatkan untuk bekerja part time di
-        beberapa perusahaan food and beverage sehingga mahir dalam mengolah kopi sebagai Barista. Terbiasa
-        bekerja secara individu atau dalam tim, mudah beradaptasi, dan bersemangat dalam menghadapi tantangan.
-    </p>
+  return (
+    <div className="py-8 px-5 sm:px-8 md:px-12 lg:px-16 max-w-7xl mx-auto space-y-16 overflow-hidden">
+      {/* Editorial Header */}
+      <div className="space-y-6 w-full">
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-semibold tracking-wide">
+          <span>👋</span> Get to know me
+        </div>
 
-    <h1 className="font-bold text-4xl mb-10 text-whitesmoke-800 dark:text-whitesmoke">
-        Work Experience
-    </h1>
-    <div className="w-full flex flex-col lg:flex-row mx-auto mb-5">
+        <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.15]">
+          Building Scalable <br className="hidden sm:inline" />
+          <span className="text-blue-500">Web Applications</span> &amp; Enterprise Systems.
+        </h1>
 
-        <div className="lg:w-1/2 justify-center items-center animate-fadeInLeft">
-            <h2 className="text-2xl font-semibold text-whitesmoke-800 dark:text-whitesmoke mb-4">Full Stack Developer
-            </h2>
-            <div className="flex gap-5">
-                <div className="flex items-center text-gray-600 dark:text-gray-300">
-                    <svg className="w-6 h-6 mr-2" fill="currentColor" xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 24 24">
-                        <path
-                            d="M12 2C8.1 2 5 5.1 5 9c0 1.4.4 2.7 1.2 3.8C4.7 14.6 4 16.2 4 18v3h2v-3c0-1.1.9-2 2-2h4c1.1 0 2 .9 2 2v3h2v-3c0-1.8-.7-3.4-2.2-4.2.8-1.1 1.2-2.4 1.2-3.8 0-3.9-3.1-7-7-7zm0 2c1.9 0 3.5 1.3 3.9 3H8.1C8.5 5.3 10.1 4 12 4zm-5 9c0-1.7 1.3-3 3-3s3 1.3 3 3H7zm10 4H5v-2h12v2zm-2-7h-4v2h4v-2zm2 0h2v2h-2v-2z" />
-                    </svg>
-                    <span>Kementerian Perhubungan</span>
+        <div className="space-y-4 text-sm sm:text-base text-neutral-300 leading-relaxed font-normal w-full">
+          <p>
+            Hello! I'm <strong>Krisna Yuda Nugraha</strong>, a Full-Stack Developer holding a Bachelor's degree in <strong>Informatics Engineering from Universitas Mercu Buana (GPA 3.76/4.00)</strong>. I focus on crafting web applications that are robust on the backend and intuitive for everyday users.
+          </p>
+          <p className="text-neutral-400">
+            My journey is uniquely versatile—starting in hospitality as a Barista at Yumaju Coffee Bandung, where I built strong communication and adaptability, to being trusted with enterprise platforms for Kementerian Perhubungan, PT Angkasa Pura II, and major corporations (PT Malindo Feedmill Tbk &amp; LSPPM).
+          </p>
+        </div>
+
+        {/* Quick Highlights Row */}
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2 w-full">
+          <div className="p-4 rounded-xl bg-[#161b22] border border-neutral-800/80">
+            <div className="text-xs text-neutral-500 uppercase tracking-wider">Education</div>
+            <div className="text-sm font-bold text-white mt-1">B.S. Computer Science (3.76)</div>
+          </div>
+          <div className="p-4 rounded-xl bg-[#161b22] border border-neutral-800/80">
+            <div className="text-xs text-neutral-500 uppercase tracking-wider">Core Focus</div>
+            <div className="text-sm font-bold text-blue-400 mt-1">Web Development</div>
+          </div>
+          <div className="p-4 rounded-xl bg-[#161b22] border border-neutral-800/80">
+            <div className="text-xs text-neutral-500 uppercase tracking-wider">Location</div>
+            <div className="text-sm font-bold text-white mt-1">Jakarta, Indonesia</div>
+          </div>
+        </div>
+      </div>
+
+      {/* Experience Timeline */}
+      <div className="space-y-8">
+        <div className="flex items-center gap-3">
+          <span className="w-8 h-[2px] bg-blue-500"></span>
+          <h2 className="text-lg sm:text-xl font-bold text-white tracking-widest uppercase">
+            Career Journey
+          </h2>
+        </div>
+
+        <div className="relative border-l border-neutral-800/60 ml-3 sm:ml-4 space-y-10">
+          {experiences.map((exp, index) => (
+            <div
+              key={index}
+              className="relative pl-6 sm:pl-10 group"
+            >
+              {/* Timeline Dot */}
+              <span className="absolute flex items-center justify-center w-8 h-8 bg-[#0d1117] rounded-full -left-[16.5px] top-5 transition-transform duration-300 group-hover:scale-110">
+                <span className="w-2.5 h-2.5 bg-blue-500 rounded-full shadow-[0_0_10px_rgba(59,130,246,0.8)]"></span>
+              </span>
+
+              <div className="p-6 sm:p-7 rounded-2xl bg-[#161b22] border border-neutral-800/80 group-hover:border-neutral-700 transition-all duration-300 space-y-4 shadow-sm group-hover:shadow-xl group-hover:shadow-black/20">
+                {/* Header Info */}
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-neutral-800/80 pb-4">
+                <div className="flex items-center gap-4">
+                  {exp.logo && (
+                    <div className="w-12 h-12 rounded-full bg-white flex-shrink-0 flex items-center justify-center border-2 border-neutral-700 overflow-hidden">
+                      <img 
+                        src={exp.logo} 
+                        alt={`${exp.company} Logo`} 
+                        className="w-full h-full object-contain p-1"
+                      />
+                    </div>
+                  )}
+                  <div>
+                    <h3 className="text-lg font-bold text-white flex items-center gap-2">
+                      {exp.role}
+                    </h3>
+                    <div className="text-xs text-blue-400 font-semibold mt-1">
+                      {exp.company} <span className="text-neutral-500 font-normal">&bull; {exp.location}</span>
+                    </div>
+                  </div>
                 </div>
-                <div className="flex items-center text-gray-600 dark:text-gray-300">
-                    <svg className="w-6 h-6 mr-2" fill="currentColor" xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 24 24">
-                        <path
-                            d="M12 2C8.1 2 5 5.1 5 9c0 4.4 7 13 7 13s7-8.6 7-13c0-3.9-3.1-7-7-7zm0 2c2.8 0 5 2.2 5 5 0 2.2-2.2 5.7-5 9.7-2.8-4-5-7.5-5-9.7 0-2.8 2.2-5 5-5zm0 2c-1.7 0-3 1.3-3 3s1.3 3 3 3 3-1.3 3-3-1.3-3-3-3zm0 2c.6 0 1 .4 1 1s-.4 1-1 1-1-.4-1-1 .4-1 1-1z" />
-                    </svg>
-                    <span>Jakarta Pusat</span>
+
+                <div className="flex items-center gap-2 self-start sm:self-auto mt-2 sm:mt-0">
+                  <span className="text-xs font-semibold px-3 py-1 rounded-full bg-blue-500/10 text-blue-400 border border-blue-500/20">
+                    {exp.period}
+                  </span>
                 </div>
+              </div>
+
+              {/* Summary & Highlights */}
+              <div className="space-y-3">
+                <p className="text-xs sm:text-sm text-neutral-300 font-medium leading-relaxed">
+                  {exp.summary}
+                </p>
+                <ul className="space-y-2">
+                  {exp.highlights.map((item, hIdx) => (
+                    <li key={hIdx} className="text-xs sm:text-sm text-neutral-400 flex items-start gap-2.5">
+                      <span className="text-blue-500 font-bold mt-0.5">&rarr;</span>
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Stack Used */}
+              <div className="pt-2 flex flex-wrap gap-1.5">
+                {exp.stack.map((tech, tIdx) => (
+                  <span
+                    key={tIdx}
+                    className="px-2.5 py-1 rounded-md text-[11px] font-medium bg-[#0d1117] text-neutral-300 border border-neutral-800"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
             </div>
-            <hr className="border-gray-500 my-4 w-full mx-auto" />
-        </div>
-        <div className="lg:w-1/2 justify-end items-end animate-fadeInLeft text-right">
-            <h2 className="text-2xl font-semibold text-green-600 dark:text-whitesmoke mb-4">Full-Time</h2>
-            <span className="flex justify-end items-center text-gray-600 dark:text-gray-300">Dec 2023 - present</span>
-            <hr className="border-gray-500 my-4 w-full mx-auto" />
-        </div>
-
-        {/* Tambahkan pengalaman kerja lainnya di sini */}
-    </div>
-
-
-
-    <div className="w-full flex flex-col lg:flex-row mx-auto mb-5">
-
-        <div className="lg:w-1/2 justify-center items-center animate-fadeInLeft">
-            <h2 className="text-2xl font-semibold text-whitesmoke-800 dark:text-whitesmoke mb-4">Full Stack Developer
-            </h2>
-            <div className="flex gap-5">
-                <div className="flex items-center text-gray-600 dark:text-gray-300">
-                    <svg className="w-6 h-6 mr-2" fill="currentColor" xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 24 24">
-                        <path
-                            d="M12 2C8.1 2 5 5.1 5 9c0 1.4.4 2.7 1.2 3.8C4.7 14.6 4 16.2 4 18v3h2v-3c0-1.1.9-2 2-2h4c1.1 0 2 .9 2 2v3h2v-3c0-1.8-.7-3.4-2.2-4.2.8-1.1 1.2-2.4 1.2-3.8 0-3.9-3.1-7-7-7zm0 2c1.9 0 3.5 1.3 3.9 3H8.1C8.5 5.3 10.1 4 12 4zm-5 9c0-1.7 1.3-3 3-3s3 1.3 3 3H7zm10 4H5v-2h12v2zm-2-7h-4v2h4v-2zm2 0h2v2h-2v-2z" />
-                    </svg>
-                    <span>Angkasa Pura II</span>
-                </div>
-                <div className="flex items-center text-gray-600 dark:text-gray-300">
-                    <svg className="w-6 h-6 mr-2" fill="currentColor" xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 24 24">
-                        <path
-                            d="M12 2C8.1 2 5 5.1 5 9c0 4.4 7 13 7 13s7-8.6 7-13c0-3.9-3.1-7-7-7zm0 2c2.8 0 5 2.2 5 5 0 2.2-2.2 5.7-5 9.7-2.8-4-5-7.5-5-9.7 0-2.8 2.2-5 5-5zm0 2c-1.7 0-3 1.3-3 3s1.3 3 3 3 3-1.3 3-3-1.3-3-3-3zm0 2c.6 0 1 .4 1 1s-.4 1-1 1-1-.4-1-1 .4-1 1-1z" />
-                    </svg>
-                    <span>Tanggerang</span>
-                </div>
             </div>
-            <hr className="border-gray-500 my-4 w-full mx-auto" />
+          ))}
         </div>
-        <div className="lg:w-1/2 justify-end items-end animate-fadeInLeft text-right">
-            <h2 className="text-2xl font-semibold text-green-600 dark:text-whitesmoke mb-4">Part-Time</h2>
-            <span className="flex justify-end items-center text-gray-600 dark:text-gray-300">Jan 2022 -  Dec 2023</span>
-            <hr className="border-gray-500 my-4 w-full mx-auto" />
-        </div>
+      </div>
 
-        {/* Tambahkan pengalaman kerja lainnya di sini */}
-    </div>
-
-    <div className="w-full flex flex-col lg:flex-row mx-auto mb-5">
-
-        <div className="lg:w-1/2 justify-center items-center animate-fadeInLeft">
-            <h2 className="text-2xl font-semibold text-whitesmoke-800 dark:text-whitesmoke mb-4">Store Manager
+      {/* Education & Certifications Side-by-Side */}
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 pt-4 pb-8">
+        
+        {/* Education */}
+        <div className="lg:col-span-6 flex flex-col space-y-6">
+          <div className="flex items-center gap-3">
+            <span className="w-8 h-[2px] bg-blue-500"></span>
+            <h2 className="text-lg font-bold text-white tracking-widest uppercase">
+              Education
             </h2>
-            <div className="flex gap-5">
-                <div className="flex items-center text-gray-600 dark:text-gray-300">
-                    <svg className="w-6 h-6 mr-2" fill="currentColor" xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 24 24">
-                        <path
-                            d="M12 2C8.1 2 5 5.1 5 9c0 1.4.4 2.7 1.2 3.8C4.7 14.6 4 16.2 4 18v3h2v-3c0-1.1.9-2 2-2h4c1.1 0 2 .9 2 2v3h2v-3c0-1.8-.7-3.4-2.2-4.2.8-1.1 1.2-2.4 1.2-3.8 0-3.9-3.1-7-7-7zm0 2c1.9 0 3.5 1.3 3.9 3H8.1C8.5 5.3 10.1 4 12 4zm-5 9c0-1.7 1.3-3 3-3s3 1.3 3 3H7zm10 4H5v-2h12v2zm-2-7h-4v2h4v-2zm2 0h2v2h-2v-2z" />
-                    </svg>
-                    <span>Happy Space Coffee</span>
-                </div>
-                <div className="flex items-center text-gray-600 dark:text-gray-300">
-                    <svg className="w-6 h-6 mr-2" fill="currentColor" xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 24 24">
-                        <path
-                            d="M12 2C8.1 2 5 5.1 5 9c0 4.4 7 13 7 13s7-8.6 7-13c0-3.9-3.1-7-7-7zm0 2c2.8 0 5 2.2 5 5 0 2.2-2.2 5.7-5 9.7-2.8-4-5-7.5-5-9.7 0-2.8 2.2-5 5-5zm0 2c-1.7 0-3 1.3-3 3s1.3 3 3 3 3-1.3 3-3-1.3-3-3-3zm0 2c.6 0 1 .4 1 1s-.4 1-1 1-1-.4-1-1 .4-1 1-1z" />
-                    </svg>
-                    <span>Kota Bandung</span>
-                </div>
+          </div>
+
+          <div className="flex-1 p-6 rounded-2xl bg-[#161b22] border border-neutral-800 space-y-4">
+            <div className="flex justify-between items-start">
+              <span className="text-xs font-bold text-blue-400 px-2.5 py-1 rounded-md bg-blue-500/10 border border-blue-500/20">
+                GPA 3.76 / 4.00
+              </span>
+              <span className="text-xs text-neutral-500 font-medium">Sep 2020 – Jun 2024</span>
             </div>
-            <hr className="border-gray-500 my-4 w-full mx-auto" />
+
+            <div className="flex items-center gap-4 pt-1">
+              <div className="w-14 h-14 rounded-full bg-white flex-shrink-0 flex items-center justify-center border-2 border-neutral-700 overflow-hidden">
+                <img 
+                  src="/logo-mercu.png" 
+                  alt="Universitas Mercu Buana Logo" 
+                  className="w-full h-full object-contain p-1"
+                />
+              </div>
+              <div>
+                <h3 className="text-base font-bold text-white leading-tight">
+                  Bachelor of Science in Computer Science
+                </h3>
+                <p className="text-sm text-blue-400 font-semibold mt-1">
+                  Universitas Mercu Buana, Jakarta
+                </p>
+              </div>
+            </div>
+            <p className="text-xs text-neutral-400 leading-relaxed pt-2 border-t border-neutral-800">
+              Focused on software engineering, database management systems, network computing, and web architecture.
+            </p>
+          </div>
         </div>
-        <div className="lg:w-1/2 justify-end items-end animate-fadeInLeft text-right">
-            <h2 className="text-2xl font-semibold text-green-600 dark:text-whitesmoke mb-4">Full-Time</h2>
-            <span className="flex justify-end items-center text-gray-600 dark:text-gray-300">Nov 2022 - Jan 2023</span>
-            <hr className="border-gray-500 my-4 w-full mx-auto" />
-        </div>
 
-        {/* Tambahkan pengalaman kerja lainnya di sini */}
-    </div>
-
-    <div className="w-full flex flex-col lg:flex-row mx-auto mb-5">
-
-        <div className="lg:w-1/2 justify-center items-center animate-fadeInLeft">
-            <h2 className="text-2xl font-semibold text-whitesmoke-800 dark:text-whitesmoke mb-4">Barista
+        {/* Certifications */}
+        <div className="lg:col-span-6 space-y-6">
+          <div className="flex items-center gap-3">
+            <span className="w-8 h-[2px] bg-blue-500"></span>
+            <h2 className="text-lg font-bold text-white tracking-widest uppercase">
+              Certifications
             </h2>
-            <div className="flex gap-5">
-                <div className="flex items-center text-gray-600 dark:text-gray-300">
-                    <svg className="w-6 h-6 mr-2" fill="currentColor" xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 24 24">
-                        <path
-                            d="M12 2C8.1 2 5 5.1 5 9c0 1.4.4 2.7 1.2 3.8C4.7 14.6 4 16.2 4 18v3h2v-3c0-1.1.9-2 2-2h4c1.1 0 2 .9 2 2v3h2v-3c0-1.8-.7-3.4-2.2-4.2.8-1.1 1.2-2.4 1.2-3.8 0-3.9-3.1-7-7-7zm0 2c1.9 0 3.5 1.3 3.9 3H8.1C8.5 5.3 10.1 4 12 4zm-5 9c0-1.7 1.3-3 3-3s3 1.3 3 3H7zm10 4H5v-2h12v2zm-2-7h-4v2h4v-2zm2 0h2v2h-2v-2z" />
-                    </svg>
-                    <span>Yumaju Coffee</span>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            {certifications.map((cert, cIdx) => (
+              <div
+                key={cIdx}
+                className="p-4 rounded-xl bg-[#161b22] border border-neutral-800 space-y-1.5 flex flex-col justify-between"
+              >
+                <div>
+                  <div className="text-[11px] font-bold text-blue-400 uppercase tracking-wider">{cert.issuer}</div>
+                  <div className="text-xs font-bold text-white mt-1 leading-snug">{cert.title}</div>
                 </div>
-                <div className="flex items-center text-gray-600 dark:text-gray-300">
-                    <svg className="w-6 h-6 mr-2" fill="currentColor" xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 24 24">
-                        <path
-                            d="M12 2C8.1 2 5 5.1 5 9c0 4.4 7 13 7 13s7-8.6 7-13c0-3.9-3.1-7-7-7zm0 2c2.8 0 5 2.2 5 5 0 2.2-2.2 5.7-5 9.7-2.8-4-5-7.5-5-9.7 0-2.8 2.2-5 5-5zm0 2c-1.7 0-3 1.3-3 3s1.3 3 3 3 3-1.3 3-3-1.3-3-3-3zm0 2c.6 0 1 .4 1 1s-.4 1-1 1-1-.4-1-1 .4-1 1-1z" />
-                    </svg>
-                    <span>Kota Bandung</span>
+                <div className="text-[11px] text-neutral-500 pt-2 border-t border-neutral-800/80">
+                  {cert.date}
                 </div>
-            </div>
-            <hr className="border-gray-500 my-4 w-full mx-auto" />
-        </div>
-        <div className="lg:w-1/2 justify-end items-end animate-fadeInLeft text-right">
-            <h2 className="text-2xl font-semibold text-green-600 dark:text-whitesmoke mb-4">Part-Time</h2>
-            <span className="flex justify-end items-center text-gray-600 dark:text-gray-300">Sep 2019 - Nov 2022</span>
-            <hr className="border-gray-500 my-4 w-full mx-auto" />
+              </div>
+            ))}
+          </div>
         </div>
 
-        {/* Tambahkan pengalaman kerja lainnya di sini */}
+      </div>
+
     </div>
-
-
-    <h1 className="font-bold text-4xl my-10 text-whitesmoke-800 dark:text-whitesmoke">
-        Education
-    </h1>
-    <div className="w-full flex flex-col lg:flex-row mx-auto mb-5">
-
-        <div className="lg:w-1/2 justify-center items-center animate-fadeInLeft">
-            <h2 className="text-2xl font-semibold text-whitesmoke-800 dark:text-whitesmoke mb-4">Bachelor Degree
-            </h2>
-            <div className="flex gap-5">
-                <div className="flex items-center text-gray-600 dark:text-gray-300">
-                    <svg className="w-6 h-6 mr-2" fill="currentColor" xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 24 24">
-                        <path
-                            d="M12 2C8.1 2 5 5.1 5 9c0 1.4.4 2.7 1.2 3.8C4.7 14.6 4 16.2 4 18v3h2v-3c0-1.1.9-2 2-2h4c1.1 0 2 .9 2 2v3h2v-3c0-1.8-.7-3.4-2.2-4.2.8-1.1 1.2-2.4 1.2-3.8 0-3.9-3.1-7-7-7zm0 2c1.9 0 3.5 1.3 3.9 3H8.1C8.5 5.3 10.1 4 12 4zm-5 9c0-1.7 1.3-3 3-3s3 1.3 3 3H7zm10 4H5v-2h12v2zm-2-7h-4v2h4v-2zm2 0h2v2h-2v-2z" />
-                    </svg>
-                    <span>Mercu Buana University</span>
-                </div>
-                <div className="flex items-center text-gray-600 dark:text-gray-300">
-                    <svg className="w-6 h-6 mr-2" fill="currentColor" xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 24 24">
-                        <path
-                            d="M12 2C8.1 2 5 5.1 5 9c0 4.4 7 13 7 13s7-8.6 7-13c0-3.9-3.1-7-7-7zm0 2c2.8 0 5 2.2 5 5 0 2.2-2.2 5.7-5 9.7-2.8-4-5-7.5-5-9.7 0-2.8 2.2-5 5-5zm0 2c-1.7 0-3 1.3-3 3s1.3 3 3 3 3-1.3 3-3-1.3-3-3-3zm0 2c.6 0 1 .4 1 1s-.4 1-1 1-1-.4-1-1 .4-1 1-1z" />
-                    </svg>
-                    <span>Jakarta Barat</span>
-                </div>
-            </div>
-            <hr className="border-gray-500 my-4 w-full mx-auto" />
-        </div>
-        <div className="lg:w-1/2 justify-end items-end animate-fadeInLeft text-right">
-            <h2 className="text-2xl font-semibold text-green-600 dark:text-whitesmoke mb-4">S-1</h2>
-            <span className="flex justify-end items-center text-gray-600 dark:text-gray-300">2020 - 2024</span>
-            <hr className="border-gray-500 my-4 w-full mx-auto" />
-        </div>
-
-        {/* Tambahkan pengalaman kerja lainnya di sini */}
-    </div>
-    <div className="w-full flex flex-col lg:flex-row mx-auto mb-5">
-
-        <div className="lg:w-1/2 justify-center items-center animate-fadeInLeft">
-            <h2 className="text-2xl font-semibold text-whitesmoke-800 dark:text-whitesmoke mb-4">Senior High School
-            </h2>
-            <div className="flex gap-5">
-                <div className="flex items-center text-gray-600 dark:text-gray-300">
-                    <svg className="w-6 h-6 mr-2" fill="currentColor" xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 24 24">
-                        <path
-                            d="M12 2C8.1 2 5 5.1 5 9c0 1.4.4 2.7 1.2 3.8C4.7 14.6 4 16.2 4 18v3h2v-3c0-1.1.9-2 2-2h4c1.1 0 2 .9 2 2v3h2v-3c0-1.8-.7-3.4-2.2-4.2.8-1.1 1.2-2.4 1.2-3.8 0-3.9-3.1-7-7-7zm0 2c1.9 0 3.5 1.3 3.9 3H8.1C8.5 5.3 10.1 4 12 4zm-5 9c0-1.7 1.3-3 3-3s3 1.3 3 3H7zm10 4H5v-2h12v2zm-2-7h-4v2h4v-2zm2 0h2v2h-2v-2z" />
-                    </svg>
-                    <span>SMAN 2 KOTA CIREBON</span>
-                </div>
-                <div className="flex items-center text-gray-600 dark:text-gray-300">
-                    <svg className="w-6 h-6 mr-2" fill="currentColor" xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 24 24">
-                        <path
-                            d="M12 2C8.1 2 5 5.1 5 9c0 4.4 7 13 7 13s7-8.6 7-13c0-3.9-3.1-7-7-7zm0 2c2.8 0 5 2.2 5 5 0 2.2-2.2 5.7-5 9.7-2.8-4-5-7.5-5-9.7 0-2.8 2.2-5 5-5zm0 2c-1.7 0-3 1.3-3 3s1.3 3 3 3 3-1.3 3-3-1.3-3-3-3zm0 2c.6 0 1 .4 1 1s-.4 1-1 1-1-.4-1-1 .4-1 1-1z" />
-                    </svg>
-                    <span>Kota Cirebon</span>
-                </div>
-            </div>
-            <hr className="border-gray-500 my-4 w-full mx-auto" />
-        </div>
-        <div className="lg:w-1/2 justify-end items-end animate-fadeInLeft text-right">
-            <h2 className="text-2xl font-semibold text-green-600 dark:text-whitesmoke mb-4">IPA</h2>
-            <span className="flex justify-end items-center text-gray-600 dark:text-gray-300">2020 - 2024</span>
-            <hr className="border-gray-500 my-4 w-full mx-auto" />
-        </div>
-
-        {/* Tambahkan pengalaman kerja lainnya di sini */}
-    </div>
-</section>
-
-
-
-)
+  )
 }
